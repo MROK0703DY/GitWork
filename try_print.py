@@ -5,9 +5,9 @@ from datetime import datetime as dt
 from print_жирный_и_цветной_текст import Color
 
 
-number = "15 ноября"
-time_hour = "19"
-day = "ПТН"
+number = "16 ноября"
+time_hour = "23"
+day = "СББ"
 
 
 def p(*args) -> None:
