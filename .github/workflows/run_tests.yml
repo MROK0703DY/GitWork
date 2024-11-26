@@ -1,0 +1,45 @@
+name: Automated tests
+
+on:
+
+  workflow_dispatch:
+
+    inputs:
+      deployment_target:
+        description: 'Choose target'
+        required: true
+        default: 'my tests'
+        type: choice
+        options:
+          - my tests
+          - libraries
+          - all
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ['3.12']
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Chrome
+        run: sudo apt-get install google-chrome-stable
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: my tests
+        if: ${{ github.event.inputs.deployment_target == 'my tests' || github.event.inputs.deployment_target == 'all' }}
+        run: pytest .
+      - name: libraries
+        if: ${{ github.event.inputs.deployment_target == 'libraries' || github.event.inputs.deployment_target == 'all' }}
+        run: https://sun9-55.userapi.com/impg/SysLouuXUVed5WUttF1ZzsJAUWxT6WcnGV-j7w/R5e-GQTXNQ0.jpg?size=483x604&quality=96&sign=5464a3637c68abc12f873261f51c4593&c_uniq_tag=SpRLty6TzOd9dhLxNMUtTvBM2cS5MsiqldQtLmohhLc&type=album
