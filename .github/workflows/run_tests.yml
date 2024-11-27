@@ -12,7 +12,7 @@ on:
         type: choice
         options:
           - my tests
-          - libraries
+          - image
           - all
 
 jobs:
@@ -40,6 +40,6 @@ jobs:
       - name: my tests
         if: ${{ github.event.inputs.deployment_target == 'my tests' || github.event.inputs.deployment_target == 'all' }}
         run: pytest .
-      - name: libraries
-        if: ${{ github.event.inputs.deployment_target == 'libraries' || github.event.inputs.deployment_target == 'all' }}
-        run: https://sun9-55.userapi.com/impg/SysLouuXUVed5WUttF1ZzsJAUWxT6WcnGV-j7w/R5e-GQTXNQ0.jpg?size=483x604&quality=96&sign=5464a3637c68abc12f873261f51c4593&c_uniq_tag=SpRLty6TzOd9dhLxNMUtTvBM2cS5MsiqldQtLmohhLc&type=album
+      - name: image
+        if: ${{ github.event.inputs.deployment_target == 'image' || github.event.inputs.deployment_target == 'all' }}
+        run: C:\pycharm\PycharmProjects\GitWork\exn.jpg
