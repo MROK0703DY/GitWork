@@ -12,7 +12,7 @@ on:
         type: choice
         options:
           - my tests
-          - image
+          - black
           - all
 
 jobs:
@@ -40,6 +40,6 @@ jobs:
       - name: my tests
         if: ${{ github.event.inputs.deployment_target == 'my tests' || github.event.inputs.deployment_target == 'all' }}
         run: pytest .
-      - name: image
-        if: ${{ github.event.inputs.deployment_target == 'image' || github.event.inputs.deployment_target == 'all' }}
-        run: https://github.com/MROK0703DY/GitWork/blob/main/exn.jpg
+      - name: black
+        if: ${{ github.event.inputs.deployment_target == 'black' || github.event.inputs.deployment_target == 'all' }}
+        run: black .
