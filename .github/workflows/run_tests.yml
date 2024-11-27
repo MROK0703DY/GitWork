@@ -42,4 +42,4 @@ jobs:
         run: pytest .
       - name: image
         if: ${{ github.event.inputs.deployment_target == 'image' || github.event.inputs.deployment_target == 'all' }}
-        run: C:\pycharm\PycharmProjects\GitWork\exn.jpg
+        run: https://github.com/MROK0703DY/GitWork/blob/main/exn.jpg
